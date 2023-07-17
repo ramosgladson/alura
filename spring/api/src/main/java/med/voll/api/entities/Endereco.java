@@ -1,7 +1,10 @@
 package med.voll.api.entities;
 
 import jakarta.persistence.Embeddable;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import med.voll.api.records.EnderecoDTO;
 
 @Embeddable
@@ -29,25 +32,25 @@ public class Endereco {
     }
 
     public void atualizar(EnderecoDTO enderecoDTO) {
-        if (enderecoDTO.logradouro() != null){
+        if (enderecoDTO.logradouro() != null) {
             this.logradouro = enderecoDTO.logradouro();
         }
-        if (enderecoDTO.bairro() != null){
+        if (enderecoDTO.bairro() != null) {
             this.bairro = enderecoDTO.bairro();
         }
-        if (enderecoDTO.cep() != null){
+        if (enderecoDTO.cep() != null) {
             this.cep = enderecoDTO.cep();
         }
-        if (enderecoDTO.numero() != null){
+        if (enderecoDTO.numero() != null) {
             this.numero = enderecoDTO.numero();
         }
-        if (enderecoDTO.complemento() != null){
+        if (enderecoDTO.complemento() != null) {
             this.complemento = enderecoDTO.complemento();
         }
-        if (enderecoDTO.cidade() != null){
+        if (enderecoDTO.cidade() != null) {
             this.cidade = enderecoDTO.cidade();
         }
-        if (enderecoDTO.uf() != null){
+        if (enderecoDTO.uf() != null) {
             this.uf = enderecoDTO.uf();
         }
     }

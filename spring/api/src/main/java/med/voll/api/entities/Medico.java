@@ -1,13 +1,21 @@
 package med.voll.api.entities;
 
-import jakarta.persistence.*;
-import lombok.*;
+import jakarta.persistence.Embedded;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import med.voll.api.enums.Especialidade;
 import med.voll.api.records.MedicoAtualizacaoDTO;
 import med.voll.api.records.MedicoCadastroDTO;
-import med.voll.api.records.MedicoDTO;
-
-import java.io.Serializable;
 
 @Table(name = "tb_medicos")
 @Entity
@@ -33,31 +41,30 @@ public class Medico {
 
     public Medico(MedicoCadastroDTO dados) {
         this.ativo = true;
-        this.nome=dados.nome();
-        this.email=dados.email();
-        this.telefone=dados.telefone();
-        this.crm=dados.crm();
+        this.nome = dados.nome();
+        this.email = dados.email();
+        this.telefone = dados.telefone();
+        this.crm = dados.crm();
         this.especialidade = dados.especialidade();
-        this.endereco=new Endereco(dados.endereco());
+        this.endereco = new Endereco(dados.endereco());
     }
 
-    public Medico(MedicoAtualizacaoDTO dados){
-        this.nome=dados.nome();
-        this.email=dados.telefone();
-        this.endereco=new Endereco(dados.enderecoDTO());
+    public Medico(MedicoAtualizacaoDTO dados) {
+        this.nome = dados.nome();
+        this.email = dados.telefone();
+        this.endereco = new Endereco(dados.endereco());
     }
 
     public void atualizar(MedicoAtualizacaoDTO medicoAtualizacaoDTO) {
-        if (medicoAtualizacaoDTO.nome() != null){
+        if (medicoAtualizacaoDTO.nome() != null) {
             this.nome = medicoAtualizacaoDTO.nome();
         }
-        if (medicoAtualizacaoDTO.telefone() != null){
+        if (medicoAtualizacaoDTO.telefone() != null) {
             this.telefone = medicoAtualizacaoDTO.telefone();
         }
-        if (medicoAtualizacaoDTO.enderecoDTO() != null){
-            this.endereco.atualizar(medicoAtualizacaoDTO.enderecoDTO());
+        if (medicoAtualizacaoDTO.endereco() != null) {
+            this.endereco.atualizar(medicoAtualizacaoDTO.endereco());
         }
-
 
     }
 
