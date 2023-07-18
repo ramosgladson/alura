@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import jakarta.validation.Valid;
-import med.voll.api.entities.Medico;
-import med.voll.api.records.MedicoAtualizacaoDTO;
-import med.voll.api.records.MedicoCadastroDTO;
-import med.voll.api.records.MedicoListagemDTO;
-import med.voll.api.services.MedicoService;
+import med.voll.api.domain.entities.Medico;
+import med.voll.api.domain.records.MedicoAtualizacaoDTO;
+import med.voll.api.domain.records.MedicoCadastroDTO;
+import med.voll.api.domain.records.MedicoListagemDTO;
+import med.voll.api.domain.services.MedicoService;
 
 @RestController
 @RequestMapping("/medicos")

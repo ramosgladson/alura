@@ -1,16 +1,16 @@
-package med.voll.api.services;
+package med.voll.api.domain.services;
 
+import med.voll.api.domain.entities.Paciente;
+import med.voll.api.domain.records.PacienteAtualizacaoDTO;
+import med.voll.api.domain.records.PacienteListagemDTO;
+import med.voll.api.domain.repository.PacienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import jakarta.transaction.Transactional;
-import med.voll.api.entities.Paciente;
-import med.voll.api.records.PacienteAtualizacaoDTO;
-import med.voll.api.records.PacienteDTO;
-import med.voll.api.records.PacienteListagemDTO;
-import med.voll.api.repository.PacienteRepository;
+import med.voll.api.domain.records.PacienteDTO;
 
 @Service
 public class PacienteService {
