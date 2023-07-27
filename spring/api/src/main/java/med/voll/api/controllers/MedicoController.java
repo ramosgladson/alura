@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import jakarta.validation.Valid;
-import med.voll.api.domain.entities.Medico;
 import med.voll.api.domain.records.MedicoAtualizacaoDTO;
 import med.voll.api.domain.records.MedicoCadastroDTO;
 import med.voll.api.domain.records.MedicoListagemDTO;
@@ -32,7 +31,7 @@ public class MedicoController {
     @PostMapping
     public ResponseEntity cadastrar(@RequestBody @Valid MedicoCadastroDTO medicoCadastroDTO,
             UriComponentsBuilder uriBuilder) {
-        var medicoDTO = medicoService.cadastrar(new Medico(medicoCadastroDTO));
+        var medicoDTO = medicoService.cadastrar(medicoCadastroDTO);
         var uri = uriBuilder.path("/medicos/{id}").buildAndExpand(medicoDTO.id()).toUri();
         return ResponseEntity.created(uri).body(medicoDTO);
     }
