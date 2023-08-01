@@ -14,4 +14,4 @@ CREATE table tb_pacientes(
     cidade varchar(100) not null,
 
     primary key(id)
-)
+);

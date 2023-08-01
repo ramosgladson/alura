@@ -46,4 +46,8 @@ public class MedicoService {
         var medico = medicoRepository.getReferenceById(id);
         medico.setAtivo(false);
     }
+
+    public boolean isAtivo(Long medicoId) {
+        return medicoRepository.isAtivo(medicoId);
+    }
 }

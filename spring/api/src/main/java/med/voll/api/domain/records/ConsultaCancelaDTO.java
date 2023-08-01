@@ -1,5 +1,8 @@
 package med.voll.api.domain.records;
 
-public record ConsultaCancelaDTO(Long id, String motivoCancelamento) {
+import jakarta.validation.constraints.NotBlank;
+
+public record ConsultaCancelaDTO(Long id,
+        @NotBlank(message = "Motivo do cancelamento obrigatório!!") String motivoCancelamento) {
 
 }
